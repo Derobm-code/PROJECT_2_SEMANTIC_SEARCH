@@ -1,0 +1,19 @@
+# Virtual environments
+.venv/
+venv/
+
+# Secrets
+.env
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pyc
+
+# Generated vector database
+chroma_db/
+
+# Editor settings
+.vscode/
+
