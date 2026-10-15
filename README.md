@@ -23,7 +23,7 @@ The project also includes evaluation utilities for checking answer quality and i
 
 ## Architecture
 
- text
+```text
 User question
      |
      v
@@ -46,11 +46,11 @@ Generated answer
      |
      v
 Evaluation against retrieved context
- 
+```
 
 ### Indexing pipeline
 
- text
+```text
 Source documents
       |
       v
@@ -64,7 +64,7 @@ Embedding generation
       |
       v
 ChromaDB vector storage
- 
+```
 
 ## Technology Stack
 
@@ -78,7 +78,7 @@ ChromaDB vector storage
 
 ## Project Structure
 
- text
+```text
 project-02-semantic-search/
 ├── documents/               # Sample knowledge-base documents
 ├── chroma_db/               # Locally generated vector database
@@ -98,7 +98,7 @@ project-02-semantic-search/
 ├── requirements.txt          # Python dependencies
 ├── .gitignore
 └── README.md
- 
+```
 
 Generated database files may be created at runtime and are not required to be committed if the index can be rebuilt from the source documents.
 
@@ -106,8 +106,8 @@ Generated database files may be created at runtime and are not required to be co
 
 - Python
 - Ollama installed and running locally
-- The embedding model used by  embeddings.py 
-- The generation model configured in  generator.py 
+- The embedding model used by `embeddings.py`
+- The generation model configured in `generator.py`
 
 The application uses local models, so an OpenAI API key is not required for this configuration.
 
@@ -115,10 +115,10 @@ The application uses local models, so an OpenAI API key is not required for this
 
 ### 1. Clone the repository
 
-  
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+```bash
+git clone https://github.com/Derobm-code/PROJECT_2_SEMANTIC_SEARCH.git
 cd project-02-semantic-search
- 
+```
 
 Replace the repository URL with the URL of this GitHub project.
 
@@ -126,35 +126,35 @@ Replace the repository URL with the URL of this GitHub project.
 
 On Windows PowerShell:
 
- 
+```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
- 
+```
 
 ### 3. Install dependencies
 
- 
+```powershell
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
- 
+```
 
 ### 4. Prepare Ollama
 
-Start Ollama and download the language model configured in  generator.py .
+Start Ollama and download the language model configured in `generator.py`.
 
 For example, if the project uses Qwen3 1.7B:
 
-  
+```bash
 ollama pull qwen3:1.7b
- 
+```
 
 If a different model is configured in the source code, download that model instead.
 
 ### 5. Run the application
 
-  
+```bash
 python main.py
- 
+```
 
 Enter a question related to the documents in the knowledge base. The application should retrieve relevant passages and use them to generate an answer.
 
@@ -169,7 +169,7 @@ The evaluation process is intended to examine:
 - Whether claims are supported by the retrieved evidence.
 - Whether unsupported statements can be detected.
 
-Run the evaluation entry point implemented in the repository. The current source files include  evaluation.py ,  evaluation_generation.py , and  test_evaluator.py ; use the command corresponding to the combined evaluator in the current version.
+Run the evaluation entry point implemented in the repository. The current source files include `evaluation.py`, `evaluation_generation.py`, and `test_evaluator.py`; use the command corresponding to the combined evaluator in the current version.
 
 ## Limitations
 
